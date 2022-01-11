@@ -35,6 +35,14 @@ User.init(
         len: [6],
       },
     },
+    weight: {
+      type: DataTypes.DECIMAL,
+      allowNull: true
+    },
+    workout_id:{
+      type: DataTypes.INTEGER,
+      allowNull: true
+    }
   },
   {
     hooks: {
