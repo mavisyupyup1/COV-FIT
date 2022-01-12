@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Muscle,
-          attributes: ['filename'],
+          attributes: ['filename','name'],
         },
       ],
     });

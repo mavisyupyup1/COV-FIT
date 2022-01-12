@@ -3,6 +3,7 @@ const Equipment = require('./Equipment');
 const Muscle = require('./Muscle');
 const Workout = require('./Workout');
 const WorkoutEquipment =require('./WorkoutEquipment')
+const Saved =require('./Saved')
 //workouts belongsTo a Muscle group
 Workout.belongsTo(Muscle, {
   foreignKey: 'muscle_id',
@@ -28,15 +29,30 @@ WorkoutEquipment.belongsTo(Workout,{
   foreignKey:'workout_id'
 });
 
+Workout.belongsToMany(User,{
+  through: Saved,
+  as:'saved_workout',
+  foreignKey:'workout_id',
+  onDelete:'SET NULL'
+})
+
+Saved.belongsTo(User,{
+  foreignKey:'user_id',
+  onDelete:"SET NULL"
+})
+
+Saved.belongsTo(Workout,{
+  foreignKey:'workout_id',
+  onDelete:'SET NULL'
+})
+
+User.hasMany(Saved,{
+  foreignKey:'user_id'
+})
+
+Workout.hasMany(Saved,{
+  foreignKey:'post_id'
+})
 
 
-// User.hasMany(Workout,{
-//   foreignKey: 'workout_id'
-// })
-
-// Workout.belongsToMany(User,{
-//   foreignKey:'workout_id'
-// })
-
-
-module.exports = { User,Workout,Muscle,Equipment, WorkoutEquipment };
+module.exports = { User,Workout,Muscle,Equipment, WorkoutEquipment,Saved };
