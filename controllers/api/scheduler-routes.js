@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { route } = require('.');
 const { Schedule, User, Painting } = require('../../models');
-const { sequelize } = require('../../models/Post');
 const withAuth = require('../../utils/auth');
 //get all scheduled item
 router.get('/',(req,res)=>{
@@ -11,6 +10,7 @@ router.get('/',(req,res)=>{
             user_id:req.session.user_id
         },
         attributes:[
+'id','painting_id','year',
 
         ]
     })
