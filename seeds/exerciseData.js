@@ -118,105 +118,105 @@ const exerciseData = [
     type: 'lower',
     filename: '',
     description:
-      'Lie on the floor.'
+      'Lie on your back with your knees bent and feet planted on the floor. Lifting your right foot from the floor, extend your right leg forward, keeping your thighs parallel. Pushing from your left foot, lift your buttocks from the floor so that your body forms a straight line from your chest to your knees. Lower your buttocks back to the floor. Repeat for the desired number of reps before switching sides.'
   },
   {
     title: 'Jump Lunge',
     type: 'lower',
     filename: '',
     description:
-      'Desc.'
+      'Start from a lunge position with your right leg forward and your left leg back. Pushing up off the group, jump into the air and alternate your legs so that your left leg extends forward and your right leg extends back. Land in a lunge position. Repeat.'
   },
   {
     title: 'Frog Jump',
     type: 'lower',
     filename: '',
     description:
-      'Desc.'
+      'Start from a sumo squat position (with your feet positioned slightly wider than your shoulders) and your hands touching the floor. Jump up, extending your arms above your head. Return to starting position and repeat.'
   },
   {
     title: 'Flutter Kicks',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your back, and tuck your hands (palms down) just above your buttocks. Raise your shoulders and legs from the floor, and keeping your legs as close to the floor as possible, alternate fluttering your legs up and down.'
   },
   {
     title: 'Dead Bug',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your back. Extend your arms above your and raise your feet from the floor so your calves are parallel to the ground and at a 90-degree angle with your thighs. Extend your right arm back behind you as you also extend and straighten your left leg forward. Draw both your right arm and your left leg to their original positions. Repeat, alternating sides.'
   },
   {
     title: 'Crunch',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your back with your knees bent and feet on the floor. Place your hands behind your head with your elbows out to the side. Engaging your abdominals, lift your chest into a crunch position and then lower into your starting position. Repeat.'
   },
   {
     title: 'Side Plank',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your left side with your right leg stacked on your left. Rise into a side plank supported by your left arm (bent at the elbow) and left foot. Hold, and then switch to the opposite side. Alternatively, switch quickly between the two sides.'
   },
   {
     title: 'Leg Raise',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your back with your legs straight and your hands tucked under you just above the buttocks. Engaging your abdominals, raise your legs until they are perpendicular to the floor. Lower your legs with control and return to your starting position.'
   },
   {
     title: 'Plank',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Hold a plank position, balancing on your feet (or knees) and forearms. Mimic a straight line with your body and keep your core engaged.'
   },
   {
     title: 'Ab Bikes',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your back and place your hands behind your head with your elbows out. Legs should be straight. Hover your right leg off the floor and bring your left knee to meet your right elbow. Straighten your left leg to hover off the floor as you bring your right knee to meet your left elbow. Repeat.'
   },
   {
     title: 'Heel Touches',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your back with knees bent and feet planted on the floor. Raise your shoulders off the ground and extend your hands toward your heels. Alternating sides, touch your hands to your heels, activating your obliques.'
   },
   {
     title: 'Straight-Leg Jackknife',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your back with your arms extended along the floor above your head and your legs straightened and hovering just above the floor. Engaging your core, raise both legs as you extend your arms upwards. Raising your chest and shoulders off the floor, try to touch your hands to your feet. Lower your legs, chest, and shoudlers and extend your arms back, returning to your starting position. Repeat.'
   },
   {
     title: 'Hollow Hold',
     type: 'core',
     filename: '',
     description:
-      'Desc.'
+      'Lie on the floor with your legs straightened and your arms extended along the floor above your head. Raise your shoulders and chest from the floor and raise your legs to hover above the floor. Hold for set amount of time. If needed, raise your legs higher or bend your knees to bring your legs closer to your body.'
   },
   {
     title: 'Quads',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Standing on your right leg, draw your left foot to your buttocks and hold with your left hand. Switch sides.'
   },
   {
     title: 'Glutes',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Lie on the floor with your knees bent and calves parallel to the floor. Cross your right calf across your left thigh. If comfortable, draw your left thigh closer to your body, deepening the stretch in your right glute. Switch sides.'
   },
   {
     title: 'Calves & Hamstrings',
