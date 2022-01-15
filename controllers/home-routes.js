@@ -47,7 +47,7 @@ router.get('/exercise/:type', withAuth, async (req, res) => {
 // Use the custom middleware before allowing the user to access the painting
 router.get('/exercise/:exercise_id', withAuth, async (req, res) => {
   try {
-    const dbExerciseData = await Painting.findByPk(req.params.exercise_id);
+    const dbExerciseData = await Paint/ing.findByPk(req.params.exercise_id);
 
     const exercise = dbExerciseData.get({ plain: true });
 

@@ -1,0 +1,8 @@
+<section class="container">
+  <h3 class="gallery-name">{{exercise.type}}</h3>
+  <section class="flex-row justify-center">
+    {{#each exercise.name as |exercise|}}
+    {{> exercise-card}}
+    {{/each}}
+  </section>
+</section>
