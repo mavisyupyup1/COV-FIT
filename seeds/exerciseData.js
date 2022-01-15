@@ -219,60 +219,60 @@ const exerciseData = [
       'Lie on the floor with your knees bent and calves parallel to the floor. Cross your right calf across your left thigh. If comfortable, draw your left thigh closer to your body, deepening the stretch in your right glute. Switch sides.'
   },
   {
-    title: 'Calves & Hamstrings',
+    title: 'Calves & Hamstrings (Standing)',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Start from a seated position with both legs extended in front of you. Bend your right leg so that your right foot touches your left leg at or above the knee. Extend your hands toward your left foot, bending your body over the extended leg. Switch sides.'
   },
   {
-    title: 'Calves & Hamstrings',
+    title: 'Calves & Hamstrings (Seated)',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Start from a standing position with your feet together. Without bending your knees, bend over extend your hands toward your feet.'
   },
   {
     title: 'Hip Flexors',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Start from a kneeling position with both knees on the floor. Step your right leg forward and bend the knee to a 90-degree angle. With your hands, carefully push your right knee out to the right. Hold, and switch sides.'
   },
   {
     title: 'Triceps',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Raise your right hand above your head and bend it at the elbow so that your hand falls toward the center of your back. Hold your right elbow with your left hand and pull it toward the left. Hold, and switch sides.'
   },
   {
     title: 'Shoulders/Deltoids',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Extend your right arm straight in front you and then, using your left hand, pull your right arm across your body to the left. Hold, and switch sides.'
   },
   {
     title: 'Back',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your back with your legs extended straight. Bending your right leg, draw your right knee toward your chest. Next, draw your right knee across your body and bring it the floor along your left side, holding it with your left hand if needed. Turn your head to the right, and extend your right arm out to the right. Hold, and switch sides.'
   },
   {
     title: 'Abdominals',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Lie on your stomach. Press your hands into the floor and raise your upper body into a downward-facing dog position. Hold.'
   },
   {
     title: 'Lats',
     type: 'stretch',
     filename: '',
     description:
-      'Desc.'
+      'Starting from a standing position, extend both arms up above your head. Bend your body to the right, forming the letter C with your body. Hold, and switch sides.'
   }  
 ];
 
