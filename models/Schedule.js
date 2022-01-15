@@ -27,31 +27,11 @@ Schedule.init(
           key:'id'
       }
     },
-    Year:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        len: [4]
+    start:{
+        type: DataTypes.DATE,
+        allowNull: false
       },
-      Month:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        len: [1]
-      },
-      Day: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        len: [1]
-      },
-      Hour:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        len: [1,2]
-      },
-      Minute:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        len: [4]
-      }
+
   },
   {
     sequelize,
