@@ -17,23 +17,27 @@ router.get('/',withAuth,(req,res)=>{
         ],
         include:[
             {
+                model:Painting,
+                attributes:['title']
+            },
+            {
                 model:User,
-                attributes:['id'],
-                include:{
-                    model:Painting,
-                    attributes:[title]
-                }
+                attributes:['username']
             }
         ]
     })
     .then(dbScheduleData=>{
-        const schedules = dbScheduleData.map(schedule=>schedule.map({plain:true}));
-        res.render('myschedule',{schedules,loggedIn:true})
-    })
+        console.log(dbScheduleData)
+    const schedules = dbScheduleData.map(schedule=>schedule.get({plain:true}));
+    console.log('==============')
+    console.log(schedules)
+    res.render('myschedule',{schedules,loggedIn:true})
+     })
     .catch(err=>{
         console.log(err);
         res.status(500).json(err)
     })
+    console.log()
 })
 
 router.post("/",(req, res)=>{

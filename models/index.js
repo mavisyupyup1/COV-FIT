@@ -3,13 +3,6 @@ const Gallery = require('./Gallery');
 const Painting = require('./Painting');
 const Schedule = require('./Schedule');
 
-User.hasMany(Painting,{
-  foreignKey:'user_id'
-})
-
-Painting.belongsTo(User,{
-  foreignKey:'user_id'
-})
 
 // User.belongsToMany(Painting,{
 //   through: Schedule,
@@ -27,6 +20,9 @@ Schedule.belongsTo(User,{
   foreignKey:'user_id'
 })
 
+Schedule.belongsTo(Painting,{
+  foreignKey:'painting_id'
+})
 
 User.hasMany(Schedule,{
   foreignKey:'user_id'
