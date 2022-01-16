@@ -31,7 +31,34 @@ router.get('/',withAuth,(req,res)=>{
     const schedules = dbScheduleData.map(schedule=>schedule.get({plain:true}));
     console.log('==============')
     console.log(schedules)
-    res.render('myschedule',{schedules,loggedIn:true})
+    res.render('scheduler',{schedules,loggedIn:true})
+     })
+    .catch(err=>{
+        console.log(err);
+        res.status(500).json(err)
+    })
+    console.log()
+})
+router.get('/event',withAuth,(req,res)=>{
+    console.log('=============== ')
+    console.log(req.session.user_id)
+    Schedule.findAll({
+        where:{
+            user_id:req.session.user_id
+        },
+        attributes:[
+            'start','title' 
+        ],
+        // include:[
+        //     {
+        //         model:Painting,
+        //         attributes:['title'],
+        //     },
+        // ]
+    })
+    .then(dbScheduleData=>{
+    console.log(dbScheduleData)
+    res.json(dbScheduleData)
      })
     .catch(err=>{
         console.log(err);
