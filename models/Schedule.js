@@ -20,7 +20,7 @@ Schedule.init(
         }
     },
     painting_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references:{
           model:'painting',
@@ -31,7 +31,6 @@ Schedule.init(
         type: DataTypes.DATE,
         allowNull: false
       },
-
   },
   {
     sequelize,

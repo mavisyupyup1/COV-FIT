@@ -18,14 +18,19 @@ router.get('/',withAuth,(req,res)=>{
         include:[
             {
                 model:User,
-                attributes:['id']
+                attributes:['id'],
+                include:{
+                    model:Painting,
+                    attributes:[title]
+                }
             }
         ]
     })
     .then(dbScheduleData=>{
         const schedules = dbScheduleData.map(schedule=>schedule.map({plain:true}));
         res.render('myschedule',{schedules,loggedIn:true})
-    }).catch(err=>{
+    })
+    .catch(err=>{
         console.log(err);
         res.status(500).json(err)
     })
