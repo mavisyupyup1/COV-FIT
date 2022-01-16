@@ -6,21 +6,21 @@ const exerciseData = [
     type: 'upper',
     filename: 'upper_arm-circles.jpg',
     description:
-      'Extend your arms out to the side. From the shoulder, rotate your arms forward; reverse direction halfway through your set.',
+      'Extend your arms out to the side. Rotate your arms backwards, working from your shoulders; reverse direction halfway through your set.',
   },
   {
     title: 'Bear Crawl',
     type: 'upper',
     filename: 'upper_bear-crawl.jpg',
     description:
-      "Starting on all fours, lift your knees so they're at a 90-degree angle and hovering off the ground. Move one hand and the opposite foot forward an equal distance while staying low to the ground.    Switch sides, moving the opposite hand and foot. Repeat."
+      "Starting on all fours, lift your knees so they're at a 90-degree angle and hovering off the ground. Move one hand and the opposite foot forward an equal distance while staying low to the ground. Switch sides, moving the opposite hand and foot. Repeat."
   },
   {
     title: 'Tricep Dip',
     type: 'upper',
     filename: 'upper_tricep-dip.jpg',
     description:
-      'Place your hands behind you a chair or similar surface, so that your fingers face forward. Extend your legs and bend your elbows, lowering your body until your arms are at a 90-degree angle. Pushing down with your arms, lift your body until your arms are straight.'
+      'Place your hands behind you a chair or similar surface so that your fingers face forward. Extend your legs and bend your elbows, lowering your body until your arms are at a 90-degree angle. Pushing through your arms, lift your body until your arms are straight.'
   },
   {
     title: 'Push-Up',
@@ -55,7 +55,7 @@ const exerciseData = [
     type: 'upper',
     filename: 'upper_plank-shoulder-tap.jpg',
     description:
-      'From a plank position, lift one hand from the floor and tap the opposite shoulder. Return to plan position. Repeat, alternating sides.'
+      'From a straight-arm plank position, lift one hand from the floor and tap the opposite shoulder. Return to plank position. Repeat, alternating sides.'
   },
   {
     title: 'Yoga Push-Up',
@@ -90,7 +90,7 @@ const exerciseData = [
     type: 'lower',
     filename: 'lower_sumo-squat.jpg',
     description:
-      'Stand with your legs wider than shoulder-width, toes pointing forward and slight out. Lower down into a squat, and return to starting position. Repeat.'
+      'Stand with your legs wider than shoulder-width, toes pointing forward and slight out. Lower down into a squat and return to starting position. Repeat.'
   },
   {
     title: 'Reverse Lunge',
@@ -118,14 +118,14 @@ const exerciseData = [
     type: 'lower',
     filename: 'lower_glute-bridge.jpg',
     description:
-      'Lie on your back with your knees bent and feet planted on the floor. Lifting your right foot from the floor, extend your right leg forward, keeping your thighs parallel. Pushing from your left foot, lift your buttocks from the floor so that your body forms a straight line from your chest to your knees. Lower your buttocks back to the floor. Repeat for the desired number of reps before switching sides.'
+      'Lie on your back with your knees bent and feet planted on the floor. Lifting your right foot from the floor, extend your right leg forward, keeping your thighs parallel. Pushing from your left foot and activating your left glute, lift your glutes from the floor so that your body forms a straight line from your chest to your knees. Lower your glutes back to the floor. Repeat for the desired number of reps before switching sides.'
   },
   {
     title: 'Jump Lunge',
     type: 'lower',
     filename: 'lower_jump-lunge.jpg',
     description:
-      'Start from a lunge position with your right leg forward and your left leg back. Pushing up off the group, jump into the air and alternate your legs so that your left leg extends forward and your right leg extends back. Land in a lunge position. Repeat.'
+      'Start from a lunge position with your right leg forward and your left leg back. Pushing up off the floor, jump into the air and alternate your legs so that your left leg extends forward and your right leg extends back. Land in a lunge position. Repeat.'
   },
   {
     title: 'Frog Jump',
@@ -139,14 +139,14 @@ const exerciseData = [
     type: 'core',
     filename: 'core_flutters.jpg',
     description:
-      'Lie on your back, and tuck your hands (palms down) just above your buttocks. Raise your shoulders and legs from the floor, and keeping your legs as close to the floor as possible, alternate fluttering your legs up and down.'
+      'Lie on your back and tuck your hands (palms down) just above your glutes. Raise your shoulders and legs from the floor, and keeping your legs as close to the floor as possible, alternate fluttering your legs up and down.'
   },
   {
     title: 'Dead Bug',
     type: 'core',
     filename: 'core_dead-bug.jpg',
     description:
-      'Lie on your back. Extend your arms above your and raise your feet from the floor so your calves are parallel to the ground and at a 90-degree angle with your thighs. Extend your right arm back behind you as you also extend and straighten your left leg forward. Draw both your right arm and your left leg to their original positions. Repeat, alternating sides.'
+      'Lie on your back. Extend your arms above your and raise your feet from the floor so that your calves are parallel to the ground and form a 90-degree angle with your thighs. Extend your right arm back behind you as you also extend and straighten your left leg forward. Draw both your right arm and your left leg to their original positions. Repeat, alternating sides.'
   },
   {
     title: 'Crunch',
@@ -167,7 +167,7 @@ const exerciseData = [
     type: 'core',
     filename: 'core_leg-raise.jpg',
     description:
-      'Lie on your back with your legs straight and your hands tucked under you just above the buttocks. Engaging your abdominals, raise your legs until they are perpendicular to the floor. Lower your legs with control and return to your starting position.'
+      'Lie on your back with your legs straight and your hands tucked under you just above the glutes. Engaging your abdominals, raise your legs until they are perpendicular to the floor. Lower your legs with control and return to your starting position.'
   },
   {
     title: 'Plank',
@@ -209,7 +209,7 @@ const exerciseData = [
     type: 'stretch',
     filename: 'stretch_quads.jpg',
     description:
-      'Standing on your right leg, draw your left foot to your buttocks and hold with your left hand. Switch sides.'
+      'Standing on your right leg, draw your left foot up to your glutes and hold with your left hand. Switch sides.'
   },
   {
     title: 'Glutes',
@@ -265,7 +265,7 @@ const exerciseData = [
     type: 'stretch',
     filename: 'stretch_abs.jpg',
     description:
-      'Lie on your stomach. Press your hands into the floor and raise your upper body into a downward-facing dog position. Hold.'
+      'Lie on your stomach. Press your hands into the floor and raise your upper body into an upward-facing dog position. Hold.'
   },
   {
     title: 'Lats',
