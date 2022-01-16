@@ -1,26 +1,13 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
+const { Gallery, Painting,Schedule } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
-      include: [
-        {
-          model: Painting,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
-
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
-
+    
     res.render('homepage', {
-      galleries,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -71,6 +58,35 @@ router.get('/painting/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/painting/scheduler/event',withAuth,(req,res)=>{
+    console.log('=============== ')
+    console.log(req.session.user_id)
+    Schedule.findAll({
+        where:{
+            user_id:req.session.user_id
+        },
+        attributes:[
+            'start', 
+        ],
+        include:[
+            {
+                model:Painting,
+                attributes:['title'],
+            },
+        ]
+    })
+    .then(dbScheduleData=>{
+    console.log(dbScheduleData)
+    res.json(dbScheduleData)
+     })
+    .catch(err=>{
+        console.log(err);
+        res.status(500).json(err)
+    })
+    console.log()
+})
+
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
