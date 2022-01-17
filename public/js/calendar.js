@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      initialDate: '2022-01-07',
+      displayEventTime: false,
+      schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',

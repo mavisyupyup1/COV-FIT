@@ -90,8 +90,13 @@ router.get('/painting/scheduler/event',withAuth,(req,res)=>{
         ]
     })
     .then(dbScheduleData=>{
-    console.log(dbScheduleData)
-    res.json(dbScheduleData)
+    const mappedEvents = dbScheduleData.map(event=>{
+      const eventObj =event.get({plain:true})
+      const mappedEvent = {start:eventObj.start,title:eventObj.painting.title};
+      console.log(mappedEvent);
+      return mappedEvent;
+    })
+    res.json(mappedEvents)
      })
     .catch(err=>{
         console.log(err);

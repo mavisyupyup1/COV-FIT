@@ -47,18 +47,24 @@ router.get('/event',withAuth,(req,res)=>{
             user_id:req.session.user_id
         },
         attributes:[
-            'start','title' 
+            'start'
         ],
-        // include:[
-        //     {
-        //         model:Painting,
-        //         attributes:['title'],
-        //     },
-        // ]
+        include:[
+            {
+                model:Painting,
+                attributes:['title'],
+            },
+        ]
     })
     .then(dbScheduleData=>{
-    console.log(dbScheduleData)
-    res.json(dbScheduleData)
+        const mappedEvents = dbScheduleData.map(event=>{
+            const eventObj =event.get({plain:true})
+            const mappedEvent = {start:eventObj.start,title:eventObj.painting.title};
+            console.log(mappedEvent);
+            return mappedEvent;
+          })
+          res.json(mappedEvents)
+        
      })
     .catch(err=>{
         console.log(err);
