@@ -44,46 +44,20 @@ router.get('/exercise/:type', withAuth, async (req, res) => {
 });
 
 // GET one exercise
-// Use the custom middleware before allowing the user to access the painting
+// Use the custom middleware before allowing the user to access the exercise
 router.get('/exercise/:exercise_id', withAuth, async (req, res) => {
   try {
-    const dbExerciseData = await Paint/ing.findByPk(req.params.exercise_id);
+    const dbExerciseData = await Exercise.findByPk(req.params.exercise_id);
 
     const exercise = dbExerciseData.get({ plain: true });
 
-    res.render('exercise', { exercise, loggedIn: req.session.loggedIn });
+    res.render('singe-exercise', { exercise, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-// GET schedule page
-// Use the custom middleware before allowing the user to access the scheduler
-router.get('/schedule/workout_id', withAuth, async (req, res) => {
-  try {
-    const dbWorkoutData = await Workout.findByPk(req.params.workout_id, {
-      include: [
-        {
-          model: Workout,
-          attributes: [
-            'workout_id',
-            'title',
-            'description',
-            'day_of_week',
-            'user_id',
-          ],
-        },
-      ],
-    });
-
-    const workout = dbWorkoutData.get({ plain: true });
-    res.render('workout', { workout, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
