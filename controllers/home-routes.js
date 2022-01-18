@@ -80,7 +80,7 @@ router.get('/painting/scheduler/event',withAuth,(req,res)=>{
             user_id:req.session.user_id
         },
         attributes:[
-            'start', 
+            'start', 'id'
         ],
         include:[
             {
@@ -92,7 +92,7 @@ router.get('/painting/scheduler/event',withAuth,(req,res)=>{
     .then(dbScheduleData=>{
     const mappedEvents = dbScheduleData.map(event=>{
       const eventObj =event.get({plain:true})
-      const mappedEvent = {start:eventObj.start,title:eventObj.painting.title};
+      const mappedEvent = {start:eventObj.start,title:eventObj.painting.title,id:eventObj.id};
       console.log(mappedEvent);
       return mappedEvent;
     })
