@@ -4,5 +4,5 @@ const session = require(`session`)
 const bodyParser = require(`body-parser`)
 const path = require(`path`)
 
-//Create and add CovFit database here
+//Create and add CovFit database here when complete
 
