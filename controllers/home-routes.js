@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Workout, Exercise, User, WorkoutExercise } = require('../models');
+const { Workout, Exercise, User, WorkoutExercise ,Schedule} = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
@@ -15,7 +15,60 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+// GET one exercise
+// Use the custom middleware before allowing the user to access the exercise
+router.get('/exercise/:exercise_id', withAuth, (req, res) => {
+  Exercise.findOne({
+    where:{ exercise_id:req.params.exercise_id},
+    attributes:[
+      'exercise_id',
+      'title',
+      'description',
+      'filename',
+      'type'
+    ]})
+    .then(dbExerciseData=>{
+      const exercise = dbExerciseData.get({plain:true})
+      res.render('exercise',{exercise,loggedIn:true})
+    })
+  .catch (err=>{
+    console.log(err);
+    res.status(500).json(err);
+  })
+});
 
+router.get('/exercise/scheduler/event',withAuth,(req,res)=>{
+  console.log('=============== ')
+  console.log(req.session.user_id)
+  Schedule.findAll({
+      where:{
+          user_id:req.session.user_id
+      },
+      attributes:[
+          'start', 'id'
+      ],
+      include:[
+          {
+              model:Exercise,
+              attributes:['title'],
+          },
+      ]
+  })
+  .then(dbScheduleData=>{
+  const mappedEvents = dbScheduleData.map(event=>{
+    const eventObj =event.get({plain:true})
+    const mappedEvent = {start:eventObj.start,title:eventObj.exercise.title,id:eventObj.id};
+    console.log(mappedEvent);
+    return mappedEvent;
+  })
+  res.json(mappedEvents)
+   })
+  .catch(err=>{
+      console.log(err);
+      res.status(500).json(err)
+  })
+  console.log()
+})
 // GET all exercise of type (upper, lower, core, stretch, all?)
 // Use the custom middleware before allowing the user to access the exercises
 router.get('/exercise/:type', withAuth, async (req, res) => {
@@ -50,53 +103,7 @@ router.get('/exercise/:type', withAuth, async (req, res) => {
   }
 });
 
-// GET one exercise
-// Use the custom middleware before allowing the user to access the exercise
-router.get('/exercise/:exercise_id', withAuth, async (req, res) => {
-  try {
-    const dbExerciseData = await Exercise.findByPk(req.params.exercise_id);
 
-    const exercise = dbExerciseData.get({ plain: true });
-
-    res.render('singe-exercise', { exercise, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/painting/scheduler/event',withAuth,(req,res)=>{
-    console.log('=============== ')
-    console.log(req.session.user_id)
-    Schedule.findAll({
-        where:{
-            user_id:req.session.user_id
-        },
-        attributes:[
-            'start', 'id'
-        ],
-        include:[
-            {
-                model:Painting,
-                attributes:['title'],
-            },
-        ]
-    })
-    .then(dbScheduleData=>{
-    const mappedEvents = dbScheduleData.map(event=>{
-      const eventObj =event.get({plain:true})
-      const mappedEvent = {start:eventObj.start,title:eventObj.painting.title,id:eventObj.id};
-      console.log(mappedEvent);
-      return mappedEvent;
-    })
-    res.json(mappedEvents)
-     })
-    .catch(err=>{
-        console.log(err);
-        res.status(500).json(err)
-    })
-    console.log()
-})
 
 // add sign up route
 
