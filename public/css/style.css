@@ -8,12 +8,12 @@
 }
 
 :root {
-  --primary: #435265;
-  --secondary: #86938f;
-  --tertiary: #5e877f;
+  --primary: #2c2c34;
+  --secondary: #4d8d9c;
+  --tertiary: #1f6171;
   --quatrinary: #6c6b67;
   --light: #e3e4e3;
-  --dark: #182c23;
+  --dark: #bcbcbc;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
 }
@@ -39,7 +39,7 @@ a:visited {
 }
 
 header {
-  padding: 40px;
+  padding: 10px;
   text-align: center;
   background: var(--primary);
   color: var(--light);
@@ -114,7 +114,6 @@ img {
   padding: 10px 20px;
   font-weight: bold;
 }
-*/
 
 /* CARDS */
 .card {
@@ -127,16 +126,15 @@ img {
 }
 
 .login-card {
-  margin: 0 0 20px 0;
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: #577a7c;
-  color: var(--light);
+  width: 500px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 20px 20px 20px;
+  border-bottom: 1px solid #dee0e4;
 }
 
 .card header {
