@@ -1,5 +1,4 @@
-
-<div class="row justify-space-between-md">
+{{!-- <div class="row justify-space-between-md">
   <div class="login-card">
     <h1 class="page-title">Login</h1>
     <form class="form login-form">
@@ -7,28 +6,36 @@
       <a href="/" class="active">Login</a>
       <a href="/signup">Sign up</a>
     </div>
-    
       <div class="form-group">
-        <form class="ajax-form" action="/" method="post">
-          <label for="username">
-            <i class="fas fa-user"></i>
+        {{!-- USER LOGIN EMAIL INPUT --}}
+        <form class="form login-form" action="/" method="post">
+          <label for="email-login">Email
           </label>
           <input type="text" name="username" placeholder="Username" id="username" required>
+        {{!-- USER LOGIN PASSWORD INPUT --}}
+          <div>
           <label for="password-login">Password
-            <i class="fas fa-lock"></i>
           </label>
           <input type="password" name="password" id="password-login" placeholder="Password" id="password" required>
+          </div>
+          <div>
           <label id="rememberme"></label>
             <input type="checkbox" name="rememberme">Remember me
+          </div>
+          <div class="form-group">
           <button class="btn btn-primary" type="submit">login</button>
-        </form>
-<script src="./js/login.js"></script>
+          </div>
+        </form> --}}
 
-
-
-
-
-      {{!-- <div class="form-group">
+<div class="row justify-space-between-md">
+  <div class="login-card">
+    <h2 class="page-title">Login</h2>
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">Email:</label>
+        <input class="form-input" type="text" id="email-login" />
+      </div>
+      <div class="form-group">
         <label for="password-login">Password:</label>
         <input class="form-input" type="password" id="password-login" />
       </div>
@@ -37,10 +44,7 @@
       </div>
     </form>
   </div>
-
- --}}
-
-  {{!-- <div class="login-card">
+  <div class="login-card">
     <h2 class="page-title">Signup</h2>
     <form class="form signup-form">
       <div class="form-group">
@@ -60,5 +64,7 @@
       </div>
     </form>
   </div>
-</div> --}}
+</div>
+
+<script src="./js/login.js"></script>
 
