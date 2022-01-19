@@ -1,8 +1,8 @@
 const User = require('./User');
-
-const Gallery = require('./Gallery');
-const Painting = require('./Painting');
 const Schedule = require('./Schedule');
+const Workout = require('./Workout');
+const Exercise = require('./Exercise');
+const WorkoutExercise = require('./WorkoutExercise');
 
 
 // User.belongsToMany(Painting,{
@@ -21,29 +21,22 @@ Schedule.belongsTo(User,{
   foreignKey:'user_id'
 })
 
-Schedule.belongsTo(Painting,{
-  foreignKey:'painting_id'
+// TODO Was based on Painting model of original files, which hypothetically relates to the Exercise model, but may need to be changed
+Schedule.belongsTo(Exercise,{
+  foreignKey:'exercise_id'
 })
 
 User.hasMany(Schedule,{
   foreignKey:'user_id'
 })
 
-const Workout = require('./Workout');
-const Exercise = require('./Exercise');
-const WorkoutExercise = require('./WorkoutExercise');
-
-
-User.hasMany(Workout, {
-  foreignKey: 'user_id',
-});
+// User.hasMany(Workout, {
+//   foreignKey: 'user_id',
+// });
 
 Workout.belongsTo(User, {
   foreignKey: 'user_id',
 });
-
-
-module.exports = { User, Gallery, Painting,Schedule };
 
 Exercise.belongsToMany(Workout, {
   through: WorkoutExercise
@@ -53,5 +46,5 @@ Workout.belongsToMany(Exercise, {
   through: WorkoutExercise
 });
 
-module.exports = { User, Workout, Exercise, WorkoutExercise };
+module.exports = { User, Workout, Exercise, WorkoutExercise, Schedule };
 

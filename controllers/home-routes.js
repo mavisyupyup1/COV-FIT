@@ -1,26 +1,13 @@
 const router = require('express').Router();
-const { Gallery, Painting,Schedule } = require('../models');
+const { Workout, Exercise, User, WorkoutExercise } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
-// GET all galleries for homepage
+
+// home route, not calling any db, just loggedIn
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
-      include: [
-        {
-          model: Painting,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
-
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
-
     res.render('homepage', {
-      galleries,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -29,19 +16,18 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one gallery
-// Use the custom middleware before allowing the user to access the gallery
-router.get('/gallery/:id', withAuth, async (req, res) => {
+// GET all exercise of type (upper, lower, core, stretch, all?)
+// Use the custom middleware before allowing the user to access the exercises
+router.get('/exercise/:type', withAuth, async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findByPk(req.params.id, {
+    const dbExerciseData = await Exercise.findByPk(req.params.type, {
       include: [
         {
-          model: Painting,
+          model: Exercise,
           attributes: [
-            'id',
+            'exercise_id',
             'title',
-            'artist',
-            'exhibition_date',
+            'type',
             'filename',
             'description',
           ],
@@ -49,23 +35,23 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
       ],
     });
 
-    const gallery = dbGalleryData.get({ plain: true });
-    res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
+    const exercise = dbExerciseData.get({ plain: true });
+    res.render('exercise', { exercise, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-// GET one painting
-// Use the custom middleware before allowing the user to access the painting
-router.get('/painting/:id', withAuth, async (req, res) => {
+// GET one exercise
+// Use the custom middleware before allowing the user to access the exercise
+router.get('/exercise/:exercise_id', withAuth, async (req, res) => {
   try {
-    const dbPaintingData = await Painting.findByPk(req.params.id);
+    const dbExerciseData = await Exercise.findByPk(req.params.exercise_id);
 
-    const painting = dbPaintingData.get({ plain: true });
+    const exercise = dbExerciseData.get({ plain: true });
 
-    res.render('painting', { painting, loggedIn: req.session.loggedIn });
+    res.render('singe-exercise', { exercise, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -105,6 +91,7 @@ router.get('/painting/scheduler/event',withAuth,(req,res)=>{
     console.log()
 })
 
+// add sign up route
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
@@ -114,5 +101,32 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+// former Gallery route, left for reference
+
+// router.get('/oldhome', async (req, res) => {
+//   try {
+//     const dbGalleryData = await Gallery.findAll({
+//       include: [
+//         {
+//           model: Painting,
+//           attributes: ['filename', 'description'],
+//         },
+//       ],
+//     });
+
+//     const galleries = dbGalleryData.map((gallery) =>
+//       gallery.get({ plain: true })
+//     );
+
+//     res.render('homepage', {
+//       galleries,
+//       loggedIn: req.session.loggedIn,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
