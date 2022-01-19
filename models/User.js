@@ -18,7 +18,7 @@ User.init(
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: this.truncate,
+      allowNull: true,
 
     },
     weight: {
