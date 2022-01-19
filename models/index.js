@@ -5,17 +5,18 @@ const Exercise = require('./Exercise');
 const WorkoutExercise = require('./WorkoutExercise');
 
 
-User.belongsToMany(Exercise,{
-  through: Schedule,
-  as:'scheduled_exercise',
-  foreignKey:'id'
-})
+// User.belongsToMany(Exercise,{
+//   through: Schedule,
+//   as:'scheduled_exercise',
+//   foreignKey:'id'
+// })
 
-Exercise.belongsToMany(User,{
-  through:Schedule,
-  as:'scheduled_exercise',
-  foreignKey:'exercise_id'
-})
+// Exercise.belongsToMany(User,{ 
+  
+//   through:Schedule,
+//   as:'scheduled_exercise',
+//   foreignKey:'exercise_id'
+// })
 
 Schedule.belongsTo(User,{
   foreignKey:'user_id'

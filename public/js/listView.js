@@ -10,14 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         {
           url:'./scheduler/event'
         },
-
-        eventDidMount: function(event, listViewEl) {
-          listViewEl.append("<span class='removebtn'>X</span>");
-          listViewEl.find(".removebtn").click(function() {
-            $('#calendar').fullCalendar('removeEvents', event._id);
-          });
-        }
-       
     });
     calendar.render();
   });
