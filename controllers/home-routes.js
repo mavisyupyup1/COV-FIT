@@ -3,7 +3,6 @@ const { Workout, Exercise, User, WorkoutExercise ,Schedule} = require('../models
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
-
 // home route, not calling any db, just loggedIn
 router.get('/', async (req, res) => {
   try {
@@ -15,6 +14,33 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// workout routes displaying all exercise under muscle group log in required
+router.get('/workout/:id', withAuth,async (req, res) => {
+if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
+ Workout.findOne({
+   where:{workout_id:req.params.id},
+      include:[
+        {model: Exercise,
+        attributes:['exercise_id','filename','title']}
+      ]
+    })
+    .then(dbWorkoutData=>{
+        //res.json(dbWorkoutData)
+    const workout = dbWorkoutData.get({plain:true})
+    // res.json(workout)
+     res.render('workout', {workout,
+    loggedIn: true,});
+    })
+ .catch (err=> {
+    console.log(err);
+    res.status(500).json(err);
+  })
+};
+})
+
 // GET one exercise
 // Use the custom middleware before allowing the user to access the exercise
 router.get('/exercise/:exercise_id', withAuth, (req, res) => {
@@ -30,6 +56,7 @@ router.get('/exercise/:exercise_id', withAuth, (req, res) => {
     .then(dbExerciseData=>{
       const exercise = dbExerciseData.get({plain:true})
       res.render('exercise',{exercise,loggedIn:true})
+      //res.json(dbExerciseData)
     })
   .catch (err=>{
     console.log(err);
@@ -71,7 +98,7 @@ router.get('/exercise/scheduler/event',withAuth,(req,res)=>{
 })
 // GET all exercise of type (upper, lower, core, stretch, all?)
 // Use the custom middleware before allowing the user to access the exercises
-router.get('/exercise/:type', withAuth, async (req, res) => {
+router.get('/workout/:id', withAuth, async (req, res) => {
   try {
     console.log('---------------------------');
     const dbExerciseData = await Exercise.findAll({
