@@ -26,7 +26,7 @@ body {
   flex-direction: column;
   min-height: 50vh;
   justify-content: flex-start;
-  background-color: var(--quatrinary);
+  background-color: #1f6171;
 }
 
 a {
@@ -39,7 +39,7 @@ a:visited {
 }
 
 header {
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   background: var(--primary);
   color: var(--light);
