@@ -20,24 +20,31 @@ router.get('/', async (req, res) => {
 // Use the custom middleware before allowing the user to access the exercises
 router.get('/exercise/:type', withAuth, async (req, res) => {
   try {
-    const dbExerciseData = await Exercise.findByPk(req.params.type, {
-      include: [
-        {
-          model: Exercise,
-          attributes: [
-            'exercise_id',
-            'title',
-            'type',
-            'filename',
-            'description',
-          ],
-        },
-      ],
+    console.log('---------------------------');
+    const dbExerciseData = await Exercise.findAll({
+      where: {
+          type: req.params.type
+      },
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: [
+      //       'id',
+      //       'name',
+      //       'weight',
+      //       'username',
+      //       'email',
+      //       'password',
+      //     ],
+      //   },
+      // ],
     });
 
-    const exercise = dbExerciseData.get({ plain: true });
+    const exercise = dbExerciseData.get({ plain: true })
+
     res.render('exercise', { exercise, loggedIn: req.session.loggedIn });
-  } catch (err) {
+  }
+  catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
