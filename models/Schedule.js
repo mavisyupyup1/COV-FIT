@@ -19,12 +19,12 @@ Schedule.init(
             key:'id'
         }
     },
-    painting_id: {
+    exercise_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references:{
-          model:'painting',
-          key:'id'
+          model:'exercise',
+          key:'exercise_id'
       }
     },
     start:{

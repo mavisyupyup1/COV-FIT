@@ -5,17 +5,17 @@ const Exercise = require('./Exercise');
 const WorkoutExercise = require('./WorkoutExercise');
 
 
-// User.belongsToMany(Painting,{
-//   through: Schedule,
-//   as:'scheduled_paintings',
-//   foreignKey:'user_id'
-// })
+User.belongsToMany(Exercise,{
+  through: Schedule,
+  as:'scheduled_exercise',
+  foreignKey:'id'
+})
 
-// Painting.belongsToMany(User,{
-//   through:Schedule,
-//   as:'scheduled_paintings',
-//   foreignKey:'painting_id'
-// })
+Exercise.belongsToMany(User,{
+  through:Schedule,
+  as:'scheduled_exercise',
+  foreignKey:'exercise_id'
+})
 
 Schedule.belongsTo(User,{
   foreignKey:'user_id'
