@@ -19,13 +19,20 @@ Exercise.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
- 
+    workout_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references:{
+        modelName:'workout',
+        key:'workout_id'
+      }
+    },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     

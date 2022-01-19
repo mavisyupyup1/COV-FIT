@@ -16,16 +16,8 @@ Workout.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
-    // starting_date: {
-    //   type: DataTypes.DATE,
-    //   allowNull: false,
-    // },
-    // ending_date: {
-    //   type: DataTypes.DATE,
-    //   allowNull: false,
-    // },
     day_of_week: {
       type: DataTypes.STRING,
 
@@ -34,7 +26,7 @@ Workout.init(
       type: DataTypes.INTEGER,
       references: {
         model: "user",
-        key: "user_id"
+        key: "id"
       }
     },
 
