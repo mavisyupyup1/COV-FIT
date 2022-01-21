@@ -75,6 +75,14 @@ const exerciseData = [
       'Starting from downward-facing dog, shift your body forward into a straight-arm plank position. Bending your arms, lower your chest to the floor, and then straighten your arms to transition into upward-facing dog. Pushing into the floor with your arms, return to downward-facing dog.'
   },
   {
+    title: 'Swimmers',
+    type: 'upper',
+    workout_id:2,
+    filename: 'upper_swimmers.jpg',
+    description:
+      'Lie on your stomach and extend your arms out in front of you. Raise your legs, arms, and chest off the floor and mimic a swimming motion with your arms and legs.'
+  },
+  {
     title: 'Sqat & Side Kick',
     type: 'lower',
     workout_id:1,
