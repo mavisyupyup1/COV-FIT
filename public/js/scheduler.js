@@ -1,7 +1,6 @@
  async function scheduleHandler(event){
     event.preventDefault()
-    console.log('ere')
-    const painting_id = window.location.toString().split('/')[
+    const exercise_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1];
     const date =  document.querySelector('input[name="date"]').value;
   if(date){
@@ -9,7 +8,7 @@
           method:'POST',
           body: JSON.stringify({
               date,
-              painting_id
+              exercise_id
           }),
           headers:{
               'Content-Type':'application/json'

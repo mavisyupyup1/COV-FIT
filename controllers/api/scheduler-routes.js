@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Schedule, User, Painting } = require('../../models');
+const { Schedule, User, Exercise } = require('../../models');
 const withAuth = require('../../utils/auth');
 //get all scheduled item
 router.get('/',withAuth,(req,res)=>{
@@ -11,13 +11,13 @@ router.get('/',withAuth,(req,res)=>{
         },
         attributes:[
             'id',
-            'painting_id', 
+            'exercise_id', 
             'user_id',
             'start',  
         ],
         include:[
             {
-                model:Painting,
+                model:Exercise,
                 attributes:['title']
             },
             {
@@ -51,7 +51,7 @@ router.get('/event',withAuth,(req,res)=>{
         ],
         include:[
             {
-                model:Painting,
+                model:Exercise,
                 attributes:['title'],
             },
         ]
@@ -59,7 +59,7 @@ router.get('/event',withAuth,(req,res)=>{
     .then(dbScheduleData=>{
         const mappedEvents = dbScheduleData.map(event=>{
             const eventObj =event.get({plain:true})
-            const mappedEvent = {id:eventObj.id,start:eventObj.start,title:eventObj.painting.title};
+            const mappedEvent = {id:eventObj.id,start:eventObj.start,title:eventObj.exercise.title};
             console.log(mappedEvent);
             return mappedEvent;
           })
@@ -78,7 +78,7 @@ router.post("/",(req, res)=>{
 if(req.session){
     Schedule.create({ 
         user_id:req.session.user_id,
-        painting_id:req.body.painting_id,
+        exercise_id:req.body.exercise_id,
         start:req.body.date
     })
     .then(dbScheduleData=>res.json(dbScheduleData))

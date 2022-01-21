@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Schedule,
-        attributes: ['id', 'start', 'created_at','painting_id']
+        attributes: ['id', 'start', 'created_at','exercise_id']
       }
     ]
   })
