@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CovFit</title>
+  <title>Cov-Fit</title>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.10.1/main.css">
@@ -12,25 +12,28 @@
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.10.1/main.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600&family=Open+Sans:ital,wght@0,400;1,700&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1>CovFit</h1>
-    <h4>Stay fit in the comfort of your own home!</h4>
+    <h1>COV-FIT</h1>
+    <h4>STAY FIT IN THE COMFORT OF YOUR HOME</h4>
   </header>
   <nav>
-    <a href="/">Home</a>
+    <a href="/">HOME</a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-      <a href="/api/scheduler">Schedule</a>
+    <button id="logout" class="btn-no-style">LOG OUT</button>
+      <a href="/api/scheduler">SCHEDULE</a>
     {{else}}
-    <a href="/login">Login</a>
+    <a href="/login">LOG IN</a>
     {{/if}}
   </nav>
   <main>
     <aside>
-      <h2>Make Your Own Workout</h2>
+      <h2>build your own workout</h2>
     </aside>
     <div class="gallery">
       {{{body}}}
