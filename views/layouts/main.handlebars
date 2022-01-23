@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CovFit</title>
+  <title>COV-FIT</title>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.10.1/main.css">
@@ -16,21 +16,21 @@
 
 <body>
   <header>
-    <h1>CovFit</h1>
-    <h4>Stay fit in the comfort of your own home!</h4>
+    <h1>COV-FIT</h1>
+    <h4>stay fit in the comfort of your own home</h4>
   </header>
   <nav>
-    <a href="/">Home</a>
+    <a href="/">home</a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <button id="logout" class="btn-no-style">log out</button>
       <a href="/api/scheduler">Schedule</a>
     {{else}}
-    <a href="/login">Login</a>
+    <a href="/login">log in</a>
     {{/if}}
   </nav>
   <main>
     <aside>
-      <h2>Make Your Own Workout</h2>
+      <h2>build your own workout</h2>
     </aside>
     <div class="gallery">
       {{{body}}}

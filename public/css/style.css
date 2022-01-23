@@ -51,6 +51,7 @@ main {
   flex-grow: 1;
 }
 
+
 aside {
   flex: 0;
   background-color: var(--tertiary);
