@@ -21,5 +21,5 @@ Use npm start to invoke the application to run on local host
 https://enigmatic-fjord-07638.herokuapp.com/
 
 ## Demo
-![demo](pubic/images/COVID_Workout_Generator_Tracker.gif)
+![demo](assets/COVID_Workout_Generator_Tracker.gif)
 https://watch.screencastify.com/v/3FvwlzKvfjZ1SdsGd0CQ
