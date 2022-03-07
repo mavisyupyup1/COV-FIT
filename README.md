@@ -12,10 +12,10 @@ Throughout the COVID-19 pandemic, fitness-minded individuals have had to find wa
 * Uses at least one new library: npm FullCalendar
 
 ## Usage
-* clone the repo
+* Download or clone the repo
 * Node.js framework and mySQL is required to run the application
-* Use command npm install to install the required npm packages
-* Use npm start to invoke the application to run on local host
+* Use command ```npm install``` to install the required npm packages
+* Use ```npm start``` to invoke the application to run on local host
 
 ## Deployed website
 https://enigmatic-fjord-07638.herokuapp.com/
