@@ -1,4 +1,4 @@
-# project-2-group-a
+# COV-FIT
 
 ## Description
 Throughout the COVID-19 pandemic, fitness-minded individuals have had to find ways to work out throughout lockdowns and gym closures. With COV-FIT, you can work out from the comfort of your home and see results using minimal equipment! COV-FIT is an app that recommends at-home exercises that can be grouped into full-length workouts and scheduled for later. This app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating engine language, Sequelize as the ORM, and the express-session npm package for authentication.
